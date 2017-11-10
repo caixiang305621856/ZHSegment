@@ -19,11 +19,11 @@ Pod::Spec.new do |s|
 
   s.description      = '标签选择控制器ZHSement'
 
-  s.homepage         = 'https://github.com/caixiang305621856/-ZHSegment'
+  s.homepage         = 'https://github.com/caixiang305621856/ZHSegment'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'caixiang' => 'caix@mail.open.cn' }
-  s.source           = { :git => 'https://github.com/caixiang305621856/-ZHSegment.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/caixiang305621856/ZHSegment.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
