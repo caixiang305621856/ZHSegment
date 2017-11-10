@@ -1,0 +1,23 @@
+PODS:
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
+  - ZHSement (0.1.0)
+
+DEPENDENCIES:
+  - FBSnapshotTestCase
+  - ZHSement (from `../`)
+
+EXTERNAL SOURCES:
+  ZHSement:
+    :path: ../
+
+SPEC CHECKSUMS:
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  ZHSement: 876155f72873d06b3c9b59b30ae948acc002cb38
+
+PODFILE CHECKSUM: 31d78e084d97cc457e4e8fdca87e76a2f15f9400
+
+COCOAPODS: 1.2.1
