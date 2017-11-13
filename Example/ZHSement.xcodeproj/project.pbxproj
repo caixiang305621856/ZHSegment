@@ -251,6 +251,7 @@
 				ORGANIZATIONNAME = caixiang;
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
+						DevelopmentTeam = SAD9GVSU92;
 						ProvisioningStyle = Automatic;
 					};
 					6003F5AD195388D20070C39A = {
@@ -528,7 +529,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = SAD9GVSU92;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZHSement/ZHSement-Prefix.pch";
 				INFOPLIST_FILE = "ZHSement/ZHSement-Info.plist";
@@ -547,7 +548,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = SAD9GVSU92;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZHSement/ZHSement-Prefix.pch";
 				INFOPLIST_FILE = "ZHSement/ZHSement-Info.plist";
