@@ -32,7 +32,7 @@
     [super viewDidLoad];
     
     //设置frame
-    self.segmentViewController.segmentBar.frame = CGRectMake(0, 0, self.view.width, 50);
+    self.segmentViewController.segmentBar.frame = CGRectMake(0, 0, self.view.width, 100);
     self.segmentViewController.view.frame = CGRectMake(0, self.segmentViewController.segmentBar.height, self.view.width, self.view.height - self.segmentViewController.segmentBar.height);
     [self.view addSubview:self.segmentViewController.view];
     [self.view addSubview:self.segmentViewController.segmentBar];

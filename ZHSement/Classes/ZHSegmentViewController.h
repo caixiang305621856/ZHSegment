@@ -13,6 +13,8 @@
 
 @property (nonatomic, strong) ZHSegmentBar *segmentBar;
 
+@property (nonatomic, strong) UIScrollView *contentView;
+
 - (void)setUpWithItems: (NSArray <NSString *>*)items childViewControllers: (NSArray <UIViewController *>*)childViewControllers;
 
 @end

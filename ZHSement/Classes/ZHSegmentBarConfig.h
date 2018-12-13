@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-
+typedef NS_ENUM(NSUInteger,ZHSegmentBarConfigType) {
+    ZHSegmentBarConfigTypeNormarl = 0,
+    ZHSegmentBarConfigTypeSizeToFitLeft = 1
+};
 @interface ZHSegmentBarConfig : NSObject
 
 + (instancetype)defaultConfig;
@@ -22,5 +25,5 @@
 @property (nonatomic, strong) UIColor *indicatorColor;
 @property (nonatomic, assign) CGFloat indicatorHeight;
 @property (nonatomic, assign) CGFloat indicatorExtraW;
-
+@property (assign, nonatomic) ZHSegmentBarConfigType segmentBarConfigType;
 @end

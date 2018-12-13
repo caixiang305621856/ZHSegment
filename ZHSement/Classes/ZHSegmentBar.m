@@ -58,6 +58,9 @@
     if (caculateMargin < self.config.itemMinMargin) {
         caculateMargin = self.config.itemMinMargin;
     }
+    if (self.config.segmentBarConfigType == ZHSegmentBarConfigTypeSizeToFitLeft) {
+        caculateMargin = self.config.itemMinMargin;
+    }
     CGFloat lastX = caculateMargin;
     for (UIButton *btn in self.itemBtns) {
         [btn sizeToFit];
@@ -69,11 +72,13 @@
     if (self.itemBtns.count == 0) {
         return;
     }
-    UIButton *btn = self.itemBtns[self.selectIndex];
-    self.indicatorView.width = btn.width + self.config.indicatorExtraW * 2;
-    self.indicatorView.centerX = btn.centerX;
-    self.indicatorView.height = self.config.indicatorHeight;
-    self.indicatorView.y = self.height - self.indicatorView.height;
+    if (self.selectIndex < self.itemBtns.count) {
+        UIButton *btn = self.itemBtns[self.selectIndex];
+        self.indicatorView.width = btn.width + self.config.indicatorExtraW * 2;
+        self.indicatorView.centerX = btn.centerX;
+        self.indicatorView.height = self.config.indicatorHeight;
+        self.indicatorView.y = self.height - self.indicatorView.height;
+    }
 }
 
 - (void)updateWithConfig: (void(^)(ZHSegmentBarConfig *config))configBlock {
@@ -105,11 +110,11 @@
         self.indicatorView.centerX = sender.centerX;
     }];
     CGFloat scrollX = sender.centerX - self.contentView.width * 0.5;
-    if (scrollX < 0) {
-        scrollX = 0;
-    }
     if (scrollX > self.contentView.contentSize.width - self.contentView.width) {
         scrollX = self.contentView.contentSize.width - self.contentView.width;
+    }
+    if (scrollX < 0) {
+        scrollX = 0;
     }
     [self.contentView setContentOffset:CGPointMake(scrollX, 0) animated:YES];
 }
@@ -142,7 +147,7 @@
         [self.contentView addSubview:btn];
         [self.itemBtns addObject:btn];
     }
-
+    
     [self setNeedsLayout];
     [self layoutIfNeeded];
 }

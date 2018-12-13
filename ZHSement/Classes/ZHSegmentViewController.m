@@ -11,7 +11,6 @@
 
 @interface ZHSegmentViewController ()<ZHSegmentBarDelegate,UIScrollViewDelegate>
 #pragma mark - UI Perproty
-@property (nonatomic, strong) UIScrollView *contentView;
 @end
 
 @implementation ZHSegmentViewController
@@ -51,6 +50,10 @@
 #pragma mark - public
 - (void)setUpWithItems: (NSArray <NSString *>*)items childViewControllers: (NSArray <UIViewController *>*)childViewControllers {
     self.segmentBar.items = items;
+    //会有个bug 就是vc被移除后，View 没被移除  现在就直接隐藏
+    [self.childViewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        obj.view.hidden = YES;
+    }];
     [self.childViewControllers makeObjectsPerformSelector:@selector(removeFromParentViewController)];
     [childViewControllers enumerateObjectsUsingBlock:^(UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [self addChildViewController:obj];
@@ -66,6 +69,7 @@
     }
     UIViewController *vc = self.childViewControllers[index];
     vc.view.frame = CGRectMake(index * self.contentView.width, 0, self.contentView.width, self.contentView.height);
+    vc.view.hidden = NO;
     [self.contentView addSubview:vc.view];
     [self.contentView setContentOffset:CGPointMake(index * self.contentView.width, 0) animated:YES];
 }
