@@ -78,6 +78,7 @@
         self.indicatorView.centerX = btn.centerX;
         self.indicatorView.height = self.config.indicatorHeight;
         self.indicatorView.y = self.height - self.indicatorView.height;
+        self.indicatorView.layer.cornerRadius = self.config.indicatorCorner;
     }
 }
 
@@ -103,9 +104,13 @@
     }
     _selectIndex = sender.tag;
     _selectButton.selected = NO;
+    _selectButton.titleLabel.font = self.config.itemFont;
+    
     sender.selected = YES;
     _selectButton = sender;
-    [UIView animateWithDuration:0.1 animations:^{
+    _selectButton.titleLabel.font = self.config.itemSelectFont;
+    
+    [UIView animateWithDuration:0.2 animations:^{
         self.indicatorView.width = sender.width + self.config.indicatorExtraW * 2;
         self.indicatorView.centerX = sender.centerX;
     }];
@@ -117,6 +122,11 @@
         scrollX = 0;
     }
     [self.contentView setContentOffset:CGPointMake(scrollX, 0) animated:YES];
+    
+    if (self.config.itemFont != self.config.itemSelectFont) {
+        [self setNeedsLayout];
+        [self layoutIfNeeded];
+    }
 }
 
 
@@ -151,8 +161,6 @@
     [self setNeedsLayout];
     [self layoutIfNeeded];
 }
-
-
 
 - (NSMutableArray<UIButton *> *)itemBtns {
     if (!_itemBtns) {

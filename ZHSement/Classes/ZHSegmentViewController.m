@@ -50,9 +50,9 @@
 #pragma mark - public
 - (void)setUpWithItems: (NSArray <NSString *>*)items childViewControllers: (NSArray <UIViewController *>*)childViewControllers {
     self.segmentBar.items = items;
-    //会有个bug 就是vc被移除后，View 没被移除  现在就直接隐藏
     [self.childViewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        obj.view.hidden = YES;
+        [obj.view removeFromSuperview];
+        [obj willMoveToParentViewController:nil];
     }];
     [self.childViewControllers makeObjectsPerformSelector:@selector(removeFromParentViewController)];
     [childViewControllers enumerateObjectsUsingBlock:^(UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {

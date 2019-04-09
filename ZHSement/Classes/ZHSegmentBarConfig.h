@@ -20,8 +20,9 @@ typedef NS_ENUM(NSUInteger,ZHSegmentBarConfigType) {
 @property (nonatomic, strong) UIColor *itemNormalColor;
 @property (nonatomic, strong) UIColor *itemSelectColor;
 @property (nonatomic, strong) UIFont *itemFont;
+@property (nonatomic, strong) UIFont *itemSelectFont;
 @property (nonatomic, assign) CGFloat itemMinMargin;
-
+@property (nonatomic, assign) CGFloat indicatorCorner;
 @property (nonatomic, strong) UIColor *indicatorColor;
 @property (nonatomic, assign) CGFloat indicatorHeight;
 @property (nonatomic, assign) CGFloat indicatorExtraW;
