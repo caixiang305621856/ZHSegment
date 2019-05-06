@@ -4,20 +4,24 @@ PODS:
   - FBSnapshotTestCase/Core (2.1.4)
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
-  - ZHSement (0.1.0)
+  - ZHSement (0.1.2)
 
 DEPENDENCIES:
   - FBSnapshotTestCase
   - ZHSement (from `../`)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - FBSnapshotTestCase
+
 EXTERNAL SOURCES:
   ZHSement:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  ZHSement: 134d9f255c6bed4a4165c44903d6681de9f20a5d
+  ZHSement: 14ba881659abe0a8c5c4ed82476c430c8b853ac0
 
 PODFILE CHECKSUM: 31d78e084d97cc457e4e8fdca87e76a2f15f9400
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.5.3

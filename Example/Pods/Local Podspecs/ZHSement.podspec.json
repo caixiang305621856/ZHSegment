@@ -1,6 +1,6 @@
 {
   "name": "ZHSement",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "summary": "ZHSement.",
   "description": "标签选择控制器ZHSement",
   "homepage": "https://github.com/caixiang305621856/ZHSegment",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/caixiang305621856/ZHSegment.git",
-    "tag": "0.1.0"
+    "tag": "0.1.2"
   },
   "platforms": {
     "ios": "8.0"
